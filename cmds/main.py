@@ -9,7 +9,10 @@ class Main(Cog_Extension):
     async def ping(self, ctx):
         await ctx.send(f'{round(self.bot.latency*1000)} (ms)')
     
-    
+    @commands.command()
+    async def clean(self, ctx, num:int):
+        await ctx.channel.purge(limit=num+1)
+
 
 
 def setup(bot):
